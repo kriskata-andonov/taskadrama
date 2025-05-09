@@ -1,9 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
+
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import TasksPage from './pages/TasksPage'
+
 import './App.css'
+
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -11,7 +15,8 @@ function App() {
     <>
       <BrowserRouter>
         <div className="App">
-          <h1>Task Manager</h1>
+          <Navbar />
+
           <Routes>
             <Route path="/" element={<TasksPage />} />
             <Route path="/login" element={<LoginPage />} />
