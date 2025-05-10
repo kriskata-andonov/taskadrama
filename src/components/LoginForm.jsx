@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { loginUser } from "../api";
 
 function LoginForm(){
 
@@ -17,11 +18,11 @@ function LoginForm(){
     }
 
     //handle form submission
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
     //validation
-    if(!username || !password || !confirmPassword){
+    if(!username || !password){
         setError("Попълни полетата бе балък")
         return
     }
@@ -29,10 +30,16 @@ function LoginForm(){
     setError(null)
     setIsLoading(true)
 
-        setTimeout(() =>{
-            setIsLoading(false)
-        }, 1000)
-        
+    try {
+        const user = await loginUser(username, password)
+        console.log('Login succ:', user)
+         alert('Logged in')
+        } catch (err) {
+            console.error('login failed: ',err)
+            setError(err.message || 'err occured')
+        } finally {
+                setIsLoading(false)
+        }
     }
     return(
         <form onSubmit={handleSubmit}>
@@ -53,7 +60,7 @@ function LoginForm(){
             <div>
                 <label htmlFor="login-password">Password:</label>
                 <input
-                    type="password" // Use type="password" to hide input
+                    type="password"
                     id="login-password"
                     value={password}
                     onChange={handlePasswordChange}

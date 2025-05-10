@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createSessionStorage } from "react-router-dom";
+import { registerUser } from "../api";
 
 function RegisterForm(){
     const [username, setUsername] = useState('')
@@ -21,31 +21,33 @@ function RegisterForm(){
         setConfirmPassword(event.target.value);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-
-        setSuccess(null)
-        setError(null)
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSuccess(null);
+        setError(null);
 
         if (!username || !password || !confirmPassword) {
-        setError("Попълни полетата");
-        return;
+            setError("Попълни полетата");
+            return;
         }
 
         if (password !== confirmPassword) {
-        setError("Пак не си оцели паролата");
-        return;
+            setError("Пак не си оцели паролата");
+            return;
         }
 
-        setIsLoading(true)
-
-        console.log("reg attempt: ", {username, password})
-
-        setTimeout (() =>   {
-            setIsLoading(false)
-            setSuccess("reg success mssg")
-        }, 1000)
-
+        setIsLoading(true);
+        console.log("reg attempt: ", { username, password });
+        try {
+            const user = await registerUser(username, password);
+            setSuccess("Регистрацията е успешна!");
+            console.log("Registration success:", user);
+        } catch (err) {
+            setError(err.message || "Възникна грешка при регистрация");
+            console.error("Registration failed:", err);
+        } finally {
+            setIsLoading(false);
+        }
     }
     return(
         <form onSubmit={handleSubmit}>

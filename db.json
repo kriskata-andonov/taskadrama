@@ -1,4 +1,15 @@
 {
-    "users":[],
-    "tasks":[]
+  "users": [
+    {
+      "id": "8f2b",
+      "username": "brandnewuser123",
+      "password": "brandnewuser123"
+    },
+    {
+      "id": "5877",
+      "username": "hb",
+      "password": "123"
+    }
+  ],
+  "tasks": []
 }
