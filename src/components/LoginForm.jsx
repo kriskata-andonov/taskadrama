@@ -36,16 +36,17 @@ function LoginForm(){
     setIsLoading(true)
 
     try {
-        const user = await loginUser(username, password)
-        console.log('Login succ:', user)
-         alert('Logged in')
-        } catch (err) {
-            console.error('login failed: ',err)
-            setError(err.message || 'err occured')
-        } finally {
-                setIsLoading(false)
-        }
+        const user = await loginUser(username, password);
+        console.log('Login succ:', user);
+        login(user); 
+        navigate('/tasks'); 
+    } catch (err) {
+        console.error('login failed: ', err);
+        setError(err.message || 'err occured');
+    } finally {
+        setIsLoading(false);
     }
+}
     return(
         <form onSubmit={handleSubmit}>
             <h2>Login</h2>
