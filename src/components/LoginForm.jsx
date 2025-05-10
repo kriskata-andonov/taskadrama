@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { loginUser } from "../api";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm(){
 
@@ -8,6 +10,9 @@ function LoginForm(){
     const [password, setPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
+
+    const { login } = useAuth()
+    const navigate = useNavigate()
 
     //handle input changesss
     const handleUsernameChange = (event) => {
