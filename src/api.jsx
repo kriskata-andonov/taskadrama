@@ -70,3 +70,19 @@ export const registerUser = async (username, password) => {
     throw error
     }
 }
+
+export const getTasks = async (userId) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/tasks?userId=${userId}`)
+        console.log('Attempting GET tasks request to:', API_BASE_URL)
+
+        const tasks = await handleResponse(response)
+        console.log('Parsed tasks data:', tasks)
+
+        return tasks
+
+    } catch (error) {
+        console.error('ne stana nesh err: ', error)
+        throw error
+    }
+}

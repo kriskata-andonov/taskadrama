@@ -1,0 +1,22 @@
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-break: break-word;
+}
+
+.task-item.completed {
+  text-decoration: line-through;
+  color: #888;
+  background-color: #e9e9e9;
+}
+
+.task-description {
+    flex-grow: 1; 
+        margin-right: 10px; 
+}
