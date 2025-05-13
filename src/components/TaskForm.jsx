@@ -1,7 +1,7 @@
 import { use, useState } from "react";
 
 function TaskForm ({ onTaskAdded }) {
-    const [taskDescription, setTaskDeskription] = useState('')
+    const [taskDescription, setTaskDescription] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
 

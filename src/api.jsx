@@ -6,7 +6,7 @@ console.log("API module loaded. JSON Server URL: ", API_BASE_URL)
 async function handleResponse(response) {
     if (!response.ok) {
         const error = await response.json()
-        throw new Error(errorBody.message || `HTTP err status: ${response.status}`)
+        throw new Error(`HTTP err status: ${response.status}`)
     }
     return response.json()
 }
