@@ -13,10 +13,8 @@
   ],
   "tasks": [
     {
-      "id": "101",
-      "userId": "8f2b",
-      "description": "Buy groceries",
-      "completed": false
+      "completed": false,
+      "id": "101"
     },
     {
       "id": "102",
@@ -25,21 +23,13 @@
       "completed": true
     },
     {
-      "id": "103",
-      "userId": "8f2b",
-      "description": "Clean the house",
-      "completed": true
+      "completed": false,
+      "id": "103"
     },
     {
-      "id": "104",
+      "id": "5431",
       "userId": "8f2b",
-      "description": "Read a book",
-      "completed": false
-    },
-    {
-      "id": "734e",
-      "userId": "8f2b",
-      "description": "yyy",
+      "description": "s",
       "completed": false
     }
   ]
