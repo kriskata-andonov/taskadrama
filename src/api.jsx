@@ -110,3 +110,38 @@ export const addTask = async (userId, description) => {
         throw error
     }
 }
+
+export const updateTask = async (taskId, updatedData) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/tasks/${taskId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        })
+
+        const updatedTask = await handleResponse(response)
+        return updatedTask
+
+    } catch (error) {
+        console.error(`Error updating task: ${taskId}:`, error)
+        throw error
+    }
+}
+
+export const deteleTask = async (taskId) => {
+    try {
+        const response = await fetch (`${API_BASE_URL}/tasks/${taskId}`, {
+            method: 'DELETE'
+        })
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({message: 'Failed to del task'}))
+            throw new Error(error.message)
+        }
+        return{ successs: true }
+    } catch (error) {
+        console.error(`error deleting task ${taskId}: `, error)
+        throw error
+    }
+}
