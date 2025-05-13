@@ -86,3 +86,27 @@ export const getTasks = async (userId) => {
         throw error
     }
 }
+
+export const addTask = async (userId, description) => {
+    try {
+        const newTask = {
+            userId: userId,
+            description: description,
+            completed: false
+        }
+
+        const response = await fetch (`${API_BASE_URL}/tasks`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' 
+            },
+            body: JSON.stringify(newTask),
+        })
+
+        const createdTask = await handleResponse(response)
+        return createdTask
+    } catch (error) {
+        console.error(`err adding task for ${userId}: `,error)
+        throw error
+    }
+}
