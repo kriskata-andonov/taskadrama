@@ -29,15 +29,13 @@ A simple, personalized task management web application built with React. Users c
 ## Setup and Installation
 
 1.  **Clone the repository:**
-    ```
-    bash
+    ```bash
     git clone https://github.com/kriskata-andonov/taskadrama
     cd taskadrama
     ```
 
 2.  **Install dependencies:**
-    ```
-    bash
+    ```bash
     npm install
     # OR
     # yarn install
@@ -45,8 +43,7 @@ A simple, personalized task management web application built with React. Users c
 
 3.  **Start the JSON Server (Backend Simulation):**
     Open a **new** terminal window, navigate to the project directory, and run:
-    ```
-    bash
+    ```bash
     npm run server
     # OR if you don't have the npm script set up:
     # npx json-server --watch db.json --port 3001
@@ -55,8 +52,7 @@ A simple, personalized task management web application built with React. Users c
 
 4.  **Start the React Development Server (Frontend):**
     Open your **original** terminal window, navigate to the project directory (if you left it), and run:
-    ```
-    bash
+    ```bash
     npm start
     # OR if using Vite:
     # npm run dev
