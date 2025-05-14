@@ -105,7 +105,8 @@ function TasksPage() {
 
     return (
         <div>
-            <h1>Tasks:</h1>
+            <h1>Your tasks</h1>
+            <hr/>
             <TaskForm onTaskAdded={handleNewTaskAdded} />
             {isLoading && <p>Loading tasks...</p>}
             {!isLoading && 

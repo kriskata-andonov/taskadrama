@@ -35,21 +35,21 @@ function TaskForm ({ onTaskAdded }) {
     }
     return (
         <form onSubmit={handleSubmit} className="task-form">
-            <h3>Add Task</h3>
+            <h3></h3>
             <div>
-                <label htmlFor="task-description">Description:</label>
                 <input
                     type="text"
                     id="task-description"
                     value={taskDescription}
                     onChange={handleInputChange}
-                    placeholder="Enter description"
+                    placeholder="Enter Task"
                     required
                 />
             </div>
-            <button type="submit" disabled={isLoading}>
+            
+            {/* <button type="submit" disabled={isLoading}>
                 {isLoading ? 'Adding...' : 'Add Task'}
-            </button>
+            </button> */}
         </form>
     )
 }

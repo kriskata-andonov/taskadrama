@@ -9,6 +9,9 @@
     gap: 1rem;
     transition: all 0.3s ease;
     word-break: break-word;
+    margin-top: 10px;
+    width: 100%;
+    margin-left:-40px;
 }
 
 .task-item:hover {
@@ -26,6 +29,17 @@
     flex-grow: 1;
     color: #fff;
     font-size: 1rem;
+    
+}
+
+#task-description {
+    flex-grow: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.8em;
+    min-width: 200px;
+    word-break: break-word;
+    border-radius: 10px;
 }
 
 .task-actions {
@@ -46,18 +60,6 @@
 .task-button:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
-}
-
-.task-button.edit {
-    color: #646cff;
-}
-
-.task-button.delete {
-    color: #ff6b6b;
-}
-
-.task-button.complete {
-    color: #51cf66;
 }
 
 .task-metadata {
