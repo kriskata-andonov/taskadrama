@@ -83,7 +83,7 @@ A simple, personalized task management web application built with React. Users c
 
 The complete code for this project is hosted on GitHub. You can view the repository and the full commit history at:
 
-https://github.com/kriskata-andonov/taskadrama
+https://github.com/kriskata-andonov/taskadrama/commits/main/
 
 The commit history reflects the incremental development process, with distinct commits for key features and states of the application, as required by the assignment.
 
