@@ -65,11 +65,13 @@ function TasksPage() {
         )
 
         try {
-            
-            const updatedTask = await updateTask(taskId, { completed: newCompletedStatus })
-            
+            const taskToUpdate = tasks.find(task => task.id === taskId);
+            if (!taskToUpdate) throw new Error('Task not found');
+            const updatedTask = await updateTask(taskId, {
+                ...taskToUpdate,
+                completed: newCompletedStatus
+            });
         } catch (error) {
-            
             console.error(`TasksPage: Error toggling task ${taskId}: `, error);
             setError('Failed to update task.');
 
