@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { registerUser } from "../api";
+import { useNavigate } from "react-router-dom";
+import './RegiterForm.css'
 
 function RegisterForm(){
     const [username, setUsername] = useState('')
@@ -8,6 +10,8 @@ function RegisterForm(){
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
+
+    const navigate = useNavigate()
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -42,6 +46,7 @@ function RegisterForm(){
             const user = await registerUser(username, password);
             setSuccess("Регистрацията е успешна!");
             console.log("Registration success:", user);
+            navigate('/login'); 
         } catch (err) {
             setError(err.message || "Възникна грешка при регистрация");
             console.error("Registration failed:", err);
@@ -51,13 +56,9 @@ function RegisterForm(){
     }
     return(
         <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {success && <p style={{ color: 'green' }}>{success}</p>}
-
-
+      <br />
       <div>
-        <label htmlFor="register-username">Username:</label>
+        <label htmlFor="register-username" className="usernameLabel">Username: </label>
         <input
           type="text"
           id="register-username"
@@ -66,9 +67,9 @@ function RegisterForm(){
           required
         />
       </div>
-
+      <br />
       <div>
-        <label htmlFor="register-password">Password:</label>
+        <label htmlFor="register-password" className="passwordLabel">Password: </label>
         <input
           type="password"
           id="register-password"
@@ -76,10 +77,11 @@ function RegisterForm(){
           onChange={handlePasswordChange}
           required
         />
+        <br />
       </div>
-
+      <br />
       <div>
-        <label htmlFor="register-confirm-password">Confirm Password:</label>
+        <label htmlFor="register-confirm-password" className="passwordLabel">Confirm Password: </label>
         <input
           type="password"
           id="register-confirm-password"
@@ -88,7 +90,7 @@ function RegisterForm(){
           required
         />
       </div>
-
+      <br />
       <button type="submit" disabled={isLoading}>
          {isLoading ? 'Registering...' : 'Register'}
       </button>

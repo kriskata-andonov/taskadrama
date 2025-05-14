@@ -3,6 +3,7 @@ import { useState } from "react";
 import { loginUser } from "../api";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import './LoginForm.css'
 
 function LoginForm(){
 
@@ -49,11 +50,9 @@ function LoginForm(){
 }
     return(
         <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
-            {error && <p stryle={{color: 'red'}}>{error}</p>}
-
+            <br />
             <div>
-                <label htmlFor="login-username">Username:</label>
+                <label htmlFor="login-username" className="usernameLabel">Username: </label>
                 <input
                     tyoe="text"
                     id="login-username"
@@ -62,9 +61,9 @@ function LoginForm(){
                     required
                     />
             </div>
-
+            <br />
             <div>
-                <label htmlFor="login-password">Password:</label>
+                <label htmlFor="login-password" className="passwordLabel">Password: </label>
                 <input
                     type="password"
                     id="login-password"
@@ -73,7 +72,7 @@ function LoginForm(){
                     required
                 />
             </div>
-
+            <br />
             <button type="submit" disabled={isLoading}>
                 {isLoading ? 'Logging In...' : 'Login'}
             </button>

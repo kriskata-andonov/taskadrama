@@ -1,0 +1,44 @@
+#login-username{
+    flex-grow: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.8em;
+    min-width: 200px;
+    word-break: break-word;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: -3.8%;
+}
+#login-password{ 
+    flex-grow: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.8em;
+    min-width: 200px;
+    word-break: break-word;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    margin-left: -3.8%;
+}
+.usernameLabel{
+    flex-grow: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.8em;
+    min-width: 200px;
+    word-break: break-word;
+    border-radius: 10px;
+    width: 100%;
+}
+.passwordLabel{
+    flex-grow: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5em 0.8em;
+    min-width: 200px;
+    word-break: break-word;
+    border-radius: 10px;
+    width: 100%;
+}
