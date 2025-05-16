@@ -71,10 +71,15 @@
 }
 
 .task-item .task-checkbox {
+    position: relative;
+    display: block;
+    height: 24px;
+    width: 24px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
     margin-right: 15px;
     transform: scale(1.2);
-    cursor: pointer;
-}
+        }
 
 .task-item button.delete-button {
     padding: 5px 10px;
@@ -83,7 +88,7 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9em;
-    background-color: #dc3545;
+    background-color: #c72939;
     color: white;
     transition: background-color 0.2s ease;
     flex-shrink: 0;
