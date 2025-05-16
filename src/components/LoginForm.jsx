@@ -30,6 +30,7 @@ function LoginForm(){
     //validation
     if(!username || !password){
         setError("Попълни полетата бе балък")
+        alert(error)
         return
     }
 

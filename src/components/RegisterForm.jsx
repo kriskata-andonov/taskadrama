@@ -32,15 +32,17 @@ function RegisterForm(){
 
         if (!username || !password || !confirmPassword) {
             setError("Попълни полетата");
-            return;
+            alert(error)
+            return
         }
 
         if (password !== confirmPassword) {
-            setError("Пак не си оцели паролата");
-            return;
+            setError("Пак не си оцели паролата")
+            alert(error)
+            return
         }
-
-        setIsLoading(true);
+        setError(null)
+        setIsLoading(true)
         console.log("reg attempt: ", { username, password });
         try {
             const user = await registerUser(username, password);
