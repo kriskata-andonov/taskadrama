@@ -12,13 +12,13 @@ function TaskForm ({ onTaskAdded }) {
     const handleSubmit = async (event) => {
     event.preventDefault()
 
-    if (!taskDescription.trim()) {
-        setError("forgot duh descrptn u dum dum")
-        return
-    }
+    // // if (!taskDescription.trim()) {
+    // //     setError("forgot duh descrptn u dum dum")
+    // //     return
+    // // }
 
-    setError(null)
-    setIsLoading(true)
+    // setError(null)
+    // setIsLoading(true)
 
         try {
             if (onTaskAdded) {
