@@ -26,7 +26,7 @@ function LoginForm(){
     //handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
     //validation
     if(!username || !password){
         setError("Попълни полетата бе балък")

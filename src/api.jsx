@@ -21,12 +21,14 @@ export const loginUser = async (username, password) => {
 
         if (users.length === 0)
         {
+            alert('Няма такъв потребител!')
             throw new Error('usra se')
         }
 
         const user = users[0]
         if (user.password !== password) {
-        throw new Error('izponasra se')
+            alert('Обърка си паролата')
+            throw new Error('izponasra se')
         }
 
         return user
